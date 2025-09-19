@@ -76,3 +76,7 @@ build/
 # Temporary files
 *.tmp
 *.temp
+
+# Deployment
+.railway/
+railway-plan.json

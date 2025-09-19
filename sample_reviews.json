@@ -1,0 +1,82 @@
+[
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Downtown",
+    "customer_name": "Sarah Johnson",
+    "rating": 5,
+    "review_text": "Amazing pizza! The crust was perfect and the service was excellent. The staff was very friendly and attentive. Will definitely come back!",
+    "date": "2024-01-15"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Westside",
+    "customer_name": "Mike Chen",
+    "rating": 2,
+    "review_text": "The pizza was cold when it arrived and the delivery took over an hour. Very disappointed with the service. The food quality was poor.",
+    "date": "2024-01-14"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Downtown",
+    "customer_name": "Emily Rodriguez",
+    "rating": 4,
+    "review_text": "Good pizza overall. The atmosphere is nice but it can get quite noisy during peak hours. Staff could be more attentive.",
+    "date": "2024-01-13"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Northside",
+    "customer_name": "David Park",
+    "rating": 5,
+    "review_text": "Excellent food quality and fast service! The ingredients taste fresh and the price is reasonable. Great value for money.",
+    "date": "2024-01-12"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Westside",
+    "customer_name": "Lisa Thompson",
+    "rating": 3,
+    "review_text": "Average pizza place. Nothing special but nothing terrible either. The location is convenient and parking is available.",
+    "date": "2024-01-11"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Downtown",
+    "customer_name": "Robert Wilson",
+    "rating": 1,
+    "review_text": "Terrible experience. The pizza was burnt, the restaurant was dirty, and the staff was rude. Will not be returning.",
+    "date": "2024-01-10"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Northside",
+    "customer_name": "Jennifer Lee",
+    "rating": 4,
+    "review_text": "Great taste and good portion sizes. The delivery was quick and the pizza arrived hot. Would recommend to friends.",
+    "date": "2024-01-09"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Downtown",
+    "customer_name": "Mark Davis",
+    "rating": 5,
+    "review_text": "Outstanding pizza! Best in town. The crust is perfectly crispy, toppings are fresh, and the sauce has great flavor. Excellent service too.",
+    "date": "2024-01-08"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Westside",
+    "customer_name": "Amanda White",
+    "rating": 2,
+    "review_text": "Disappointing visit. The pizza was bland and overpriced. The wait time was too long and the atmosphere was not pleasant.",
+    "date": "2024-01-07"
+  },
+  {
+    "business_name": "Joe's Pizza",
+    "location": "Northside",
+    "customer_name": "Chris Brown",
+    "rating": 4,
+    "review_text": "Solid pizza place with good variety. The staff is friendly and the restaurant is clean. Minor issue with wait times during busy periods.",
+    "date": "2024-01-06"
+  }
+]

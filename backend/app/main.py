@@ -36,11 +36,12 @@ async def startup_event():
     """Initialize application services on startup."""
     logger.info("Application starting up...")
     try:
-        #initialize similarity index from db
+        # Ensure all tables exist
+        create_tables()
+        # initialize similarity index from db
         db = next(get_db())
         similarity_service.initialize_from_database(db)
         db.close()
-
         logger.info("application started successfully")
     except Exception as e:
         logger.error(f"Application startup failed: {e}")

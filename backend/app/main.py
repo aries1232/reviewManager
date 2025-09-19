@@ -21,7 +21,7 @@ app =  FastAPI(
 #Add cors 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],  # React dev server
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://review-manager-git-master-abhishek-chauhans-projects-652b4022.vercel.app"],  # React dev server
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

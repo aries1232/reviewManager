@@ -38,7 +38,7 @@ const COLORS = {
 // };
 
 export default function Analytics() {
-  const [analytics, setAnalytics] = useState([]);
+  const [analytics, setAnalytics] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Analytics() {
     setLoading(true);
     try {
       const data = await apiClient.getAnalytics();
-      if (Object.keys(data.sentiment_counts).length > 0) {
+      if (data && data.sentiment_counts) {
         setAnalytics(data);
       }
     } catch (error) {
@@ -60,6 +60,7 @@ export default function Analytics() {
   };
 
   const prepareRatingData = () => {
+    if (!analytics || !analytics.rating_distribution) return [];
     return Object.entries(analytics.rating_distribution)
       .sort(([a], [b]) => parseInt(a) - parseInt(b))
       .map(([rating, count]) => ({
@@ -69,6 +70,7 @@ export default function Analytics() {
   };
 
   const prepareLocationData = () => {
+    if (!analytics || !analytics.location_stats) return [];
     return Object.entries(analytics.location_stats).map(
       ([location, count]) => ({
         location,
@@ -78,6 +80,7 @@ export default function Analytics() {
   };
 
   const getTotalReviews = () => {
+    if (!analytics || !analytics.sentiment_counts) return 0;
     return Object.values(analytics.sentiment_counts).reduce(
       (sum, count) => sum + count,
       0
@@ -85,6 +88,7 @@ export default function Analytics() {
   };
 
   const getAverageRating = () => {
+    if (!analytics || !analytics.rating_distribution) return 0;
     const total = Object.entries(analytics.rating_distribution).reduce(
       (sum, [rating, count]) => sum + parseInt(rating) * count,
       0
@@ -98,7 +102,10 @@ export default function Analytics() {
 
   const getPositivePercentage = () => {
     const total = getTotalReviews();
-    const positive = analytics.sentiment_counts.positive || 0;
+    const positive =
+      analytics && analytics.sentiment_counts
+        ? analytics.sentiment_counts.positive || 0
+        : 0;
     return total > 0 ? Math.round((positive / total) * 100) : 0;
   };
 
@@ -171,7 +178,9 @@ export default function Analytics() {
             <MapPin className="h-8 w-8 text-purple-600" />
             <div className="ml-4">
               <p className="text-2xl font-bold text-gray-900">
-                {Object.keys(analytics.location_stats).length}
+                {analytics && analytics.location_stats
+                  ? Object.keys(analytics.location_stats).length
+                  : 0}
               </p>
               <p className="text-sm text-gray-500">Locations</p>
             </div>
@@ -202,7 +211,7 @@ export default function Analytics() {
                   <Bar
                     dataKey="count"
                     fill={COLORS.primary}
-                    radius={[4,4, 0, 0]}
+                    radius={[4, 4, 0, 0]}
                   />
                 </BarChart>
               </ResponsiveContainer>
@@ -220,11 +229,11 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="location" />
                   <YAxis />
-                  <Tooltip  content={<CustomTooltip />} />
+                  <Tooltip content={<CustomTooltip />} />
                   <Bar
                     dataKey="count"
                     fill={COLORS.accent}
-                    radius={[4, 4, 0,0]}
+                    radius={[4, 4, 0, 0]}
                   />
                 </BarChart>
               </ResponsiveContainer>
